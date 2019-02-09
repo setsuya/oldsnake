@@ -1,0 +1,120 @@
+@font-face{
+    font-family: OldSnake;
+    src: url(oldsnake.ttf);
+}
+
+@font-face{
+    font-family: Pixellari;
+    src: url(Pixellari.ttf);
+}
+
+body{
+     background: #C9D6FF;
+     background: -webkit-linear-gradient(to left, #E2E2E2, #C9D6FF);
+     background: linear-gradient(to left, #E2E2E2, #C9D6FF);
+}
+
+hr{
+    height: 1px;
+}
+
+#bezel{
+    border-radius: 20px 20px 60px 20px;
+}
+
+#sound_mg{
+    font-family: Pixellari, monospace;
+}
+
+#screen{
+    background: linear-gradient(rgba(0, 200, 0, 0.4), rgba(0, 200, 0, 0.4)), url("../img/white_plaster.png") center center no-repeat;
+    box-shadow: 2px 2px 4px #333 inset;
+}
+
+#title_screen{
+     box-sizing: border-box;
+     position: absolute;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background: url("../img/title_screen.png") center center no-repeat;
+     font-family: Pixellari, monospace;
+}
+
+#title_screen_title{
+     font-size: 48px;
+     line-height: 48px;
+     color: #333;
+     text-shadow: 2px 2px 0 #666;
+}
+
+#game{
+    line-height: 10px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#hud{
+    font-family: OldSnake, monospace;
+}
+
+#logo{
+    font-family: Pixellari, monospace;
+    color: #11197E;
+}
+
+.square{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 10px;
+    height: 10px;
+}
+
+.food{
+    background-color: transparent;
+    border: 2px solid #333;
+    border-radius: 50%;
+    box-shadow: 2px 2px 0 #666, 2px 2px 0 #666 inset;
+}
+
+.piece{
+    background-color: #333;
+    box-shadow: 2px 2px 0 #666;
+}
+
+.barrier{
+    background-color: #333;
+    box-shadow: 2px 2px 0 #666;
+}
+
+#swipe_pad, #button_pad{
+    height: 242px;
+}
+
+#swipe_pad{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/lghtmesh.png") center center no-repeat;
+}
+
+#button_up, #button_down, #button_left, #button_right{
+    width: 80px;
+    height: 80px;
+}
+
+#button_up span, #button_down span, #button_left span, #button_right span{
+    font-size: 48px;
+}
+
+.kbd{
+    display: inline-block;
+    min-width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 14px;
+    background-color: #ddd;
+    border-radius: 5px;
+    border-right: 3px solid #999;
+    border-bottom: 3px solid #999;
+}

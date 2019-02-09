@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OldSnake</title>
+        <meta charset="utf-8">
+        <meta property="og:type" content="website" />
+		<meta property="og:title" content="OldSnake" />
+		<meta property="og:url" content="https://setsuya.github.io/snake/" />
+        <link rel="manifest" href="manifest.json" />
+        <link rel="icon" type="image/png" href="img/favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+        <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.2.1/lumen/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </head>
+    <body onkeydown="updateDirection(event)">
+        <div id="main" class="container shadow bg-secondary min-vh-100">
+            <div class="row align-items-start justify-content-center">
+                <div class="col col-lg-10 col-xl-7">
+                    <div id="bezel" class="row pt-1 pb-4 mx-md-5 align-items-center justify-content-center bg-dark">
+                        <div class="col pr-1 mb-1">
+                            <hr class="bg-primary m-1" />
+                            <hr class="bg-danger m-1" />
+                        </div>
+                        <div id="sound_mg" class="col-auto text-right text-light px-0 mb-1">METAL GEAR WITH STEREO SOUND</div>
+                        <div class="col-2 pl-1 mb-1">
+                            <hr class="bg-primary m-1" />
+                            <hr class="bg-danger m-1" />
+                        </div>
+                        <div id="screen" class="col-auto p-2 rounded border border-dark">
+                            <div id="hud" class="row">
+                                <div class="col-5 text-left">
+                                    SCORE <span id="score">0</span>
+                                </div>
+                                <div id="pause_msg" class="col-2 p-0 text-center invisible">
+                                    PAUSE
+                                </div>
+                                <div class="col-5 text-right">
+                                    HI <span id="hi_score">0</span>
+                                </div>
+                            </div>
+                            <div id="game"></div>
+                        </div>
+                    </div>
+                    <div id="logo" class="row mx-md-5 pl-4 pt-1 h3">BigBoss&nbsp;<span class="font-italic">SNAKEBOY</span></div>
+                    <div class="row d-none d-md-block">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col h4">Controls:</div>
+                            </div>
+                            <div class="row py-1 align-items-center">
+                                <div class="col text-center">
+                                    <div class="kbd px-1 mx-1">&larr;</div><div class="kbd mx-1">&uarr;</div><div class="kbd mx-1">&darr;</div><div class="kbd mx-1">&rarr;</div>
+                                </div>
+                                <div class="col-8">Move Old Snake</div>
+                            </div>
+                            <div class="row py-1 align-items-center">
+                                <div class="col text-center">
+                                    <div class="kbd px-2 mx-1">Space</div>
+                                </div>
+                                <div class="col-8">Pause/Resume game</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-md-none">
+                        <div class="col-6">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="swipe_controls" onclick="setControlMethod()">
+                                <label class="custom-control-label" for="swipe_controls">Swipe controls</label>
+                            </div>
+                        </div>
+                        <div class="col-6 text-right">
+                            <span class="badge badge-pill badge-dark px-2" onclick="updateDirection({'key': ' '})">Pause</span>
+                        </div>
+                    </div>
+                    <div class="row d-none px-2">
+                        <div id="swipe_pad" class="col-12 border border-dark rounded mt-4">&nbsp;</div>
+                    </div>
+                    <div class="row d-none">
+                        <div id="button_pad" class="col-12 mt-4">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <button id="button_up" class="btn btn-warning"><span class="fas fa-chevron-up"></span></button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 text-center">
+                                    <button id="button_left" class="btn btn-warning"><span class="fas fa-chevron-left"></span></button>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <button id="button_right" class="btn btn-warning"><span class="fas fa-chevron-right"></span></button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-center">
+                                    <button id="button_down" class="btn btn-warning"><span class="fas fa-chevron-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
