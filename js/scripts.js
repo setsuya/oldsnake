@@ -33,6 +33,7 @@ window.direction = {
 function checkSavedItems(){
     if(localStorage.hi_score){
         $("#hi_score").text(localStorage.hi_score);
+        hi_score = localStorage.hi_score;
     }
 
     if(localStorage.control){
